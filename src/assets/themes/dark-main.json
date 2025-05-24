@@ -1,0 +1,17 @@
+{
+  "palette": {
+    "mode": "dark",
+    "hub": {
+      "primary": {
+        "light": "#242d33",
+        "main": "#1f282e"
+      }
+    },
+    "playground": {
+      "primary": {
+        "light": "#242d33",
+        "main": "#1f282e"
+      }
+    }
+  }
+}
