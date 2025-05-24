@@ -1,21 +1,21 @@
 {
-  "name": "@cwg/react-ui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@cw-game/react-ui",
+  "version": "1.0.1",
   "type": "module",
   "license": "MIT",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
-  "types": "./dist/main.es.d.ts",
+  "types": "./dist/main.d.ts",
   "main": "./dist/main.umd.js",
   "module": "./dist/main.es.js",
   "exports": {
     ".": {
-      "types": "./dist/main.es.d.ts",
-      "require": "./dist/main.umd.ts",
-      "import": "./dist/main.es.ts"
+      "types": "./dist/main.d.ts",
+      "require": "./dist/main.umd.js",
+      "import": "./dist/main.es.js"
     }
   },
   "scripts": {
@@ -33,6 +33,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@eslint/js": "^9.25.0",
+    "@microsoft/api-extractor": "^7.52.8",
     "@mui/material": "^7.1.0",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
@@ -67,5 +68,14 @@
   },
   "engines": {
     "node": "^20.19.1"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/Cat-World-Game/react-ui.git",
+  "keywords": [
+    "cwg",
+    "react",
+    "ui"
+  ]
 }

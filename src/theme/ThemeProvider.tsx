@@ -1,26 +1,16 @@
 import { type PropsWithChildren, useReducer } from "react";
 
-import {
-  ThemeProvider as MaterialThemeProvider,
-  type ThemeOptions,
-  type Theme,
-} from "@mui/material";
+import { ThemeProvider as MaterialThemeProvider } from "@mui/material";
 
-import { createCustomTheme, getTheme } from "./utils";
 import ThemeDispatchContext from "./ThemeDispatchContext";
+import reducer from "./reducer";
+import createCustomTheme from "./utils/createCustomTheme";
+import getTheme from "./utils/getTheme";
 
-const initialThemeReducerState = createCustomTheme(getTheme());
-
-const themeReducer = (currentTheme: Theme, themeAsset: ThemeOptions) => {
-  try {
-    return createCustomTheme(themeAsset);
-  } catch {
-    return currentTheme;
-  }
-};
+const initialReducerState = createCustomTheme(getTheme());
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const [theme, dispatch] = useReducer(themeReducer, initialThemeReducerState);
+  const [theme, dispatch] = useReducer(reducer, initialReducerState);
 
   return (
     <ThemeDispatchContext.Provider value={dispatch}>

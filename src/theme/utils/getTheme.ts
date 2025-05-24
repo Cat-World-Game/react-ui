@@ -1,4 +1,4 @@
-import darkMain from "../../assets/themes/dark-main.json";
+import darkMain from "../assets/dark-main.json";
 
 const getTheme = () => {
   try {

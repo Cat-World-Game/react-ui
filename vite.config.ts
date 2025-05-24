@@ -5,23 +5,22 @@ import dts from "vite-plugin-dts";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    dts({ tsconfigPath: "./tsconfig.app.json", rollupTypes: true }),
     react(),
-    dts({
-      insertTypesEntry: true,
-    }),
   ],
   build: {
     lib: {
-      name: "@cwg/react-ui",
+      name: "@cw-game/react-ui",
       entry: ["src/main.tsx"],
       fileName: (format, entryName) => `${entryName}.${format}.js`,
-      cssFileName: "styles",
+      cssFileName: "main",
     },
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
+          "react-dom": "ReactDOM",
         },
       },
     },
