@@ -1,6 +1,14 @@
 import { createTheme, type ThemeOptions } from "@mui/material/styles";
 import MuiCssBaseline from "../components/MuiCssBaseline";
 import breakpoints from "../const/breakpoints";
+import MuiDialog from "../components/MuiDialog";
+import MuiButton from "../components/MuiButton";
+import MuiLink from "../components/MuiLink";
+import MuiTooltip from "../components/MuiTooltip";
+import MuiPaper from "../components/MuiPaper";
+import MuiTextField from "../components/MuiTextField";
+import MuiIconButton from "../components/MuiIconButton";
+import MuiAutocomplete from "../components/MuiAutocomplete";
 
 const createCustomTheme = (asset: ThemeOptions) => {
   return createTheme({
@@ -17,17 +25,14 @@ const createCustomTheme = (asset: ThemeOptions) => {
     },
     components: {
       ...MuiCssBaseline,
-      // ...MuiIconButton,
-      // ...MuiInput,
-      // ...MuiPaper,
-      // ...MuiSnackbar,
-      // ...MuiButton,
-      // ...MuiSlider,
-      // ...MuiTooltip,
-      // ...MuiLink,
-      // ...MuiDivider,
-      // ...MuiDialog,
-      // ...MuiList,
+      ...MuiDialog,
+      ...MuiButton,
+      ...MuiLink,
+      ...MuiTooltip,
+      ...MuiPaper,
+      ...MuiTextField,
+      ...MuiIconButton,
+      ...MuiAutocomplete,
     },
   });
 };

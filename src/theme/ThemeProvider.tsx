@@ -1,6 +1,6 @@
 import { type PropsWithChildren, useReducer } from "react";
 
-import { ThemeProvider as MaterialThemeProvider } from "@mui/material";
+import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
 
 import ThemeDispatchContext from "./ThemeDispatchContext";
 import reducer from "./reducer";

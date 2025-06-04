@@ -1,10 +1,15 @@
-import { type ThemeOptions } from "@mui/material";
+import type { ThemeOptions } from "@mui/material/styles";
+
+const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
 
 const MuiCssBaseline: ThemeOptions["components"] = {
   MuiCssBaseline: {
-    styleOverrides: () => ({
+    styleOverrides: ( theme ) => ({
       "*": {
-        // scrollbarColor: `${theme.palette.base.secondary} transparent`,
+        // NOTE: if browser isn't firefox then it breaks styles below
+        ...(isFirefox && {
+          scrollbarColor: `${theme.palette.play.primary.main} transparent`,
+        }),
         "&::-webkit-scrollbar": {
           width: "6px",
           height: "6px",
@@ -13,13 +18,14 @@ const MuiCssBaseline: ThemeOptions["components"] = {
           background: "transparent",
         },
         "&::-webkit-scrollbar-thumb": {
-          // background: theme.palette.base.secondary,
+          background: theme.palette.play.primary.main,
           borderRadius: "6px",
         },
       },
       body: {
-        // backgroundColor: theme.palette.base.background,
+        backgroundColor: theme.palette.hub.background.default,
         letterSpacing: "1px",
+        lineHeight: 1,
       },
     }),
   },

@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { useTheme as useMaterialTheme } from "@mui/material";
+import { useTheme as useMaterialTheme } from "@mui/material/styles";
 import ThemeDispatchContext from "../ThemeDispatchContext";
 
-export const useTheme = () => {
-  return {
-    theme: useMaterialTheme(),
-    changeTheme: useContext(ThemeDispatchContext),
-  };
+const useTheme = () => {
+  const theme = useMaterialTheme();
+  const changeTheme = useContext(ThemeDispatchContext);
+
+  return { theme, changeTheme };
 };
 
 export default useTheme;

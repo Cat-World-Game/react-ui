@@ -1,4 +1,4 @@
-import type { Theme, ThemeOptions } from "@mui/material";
+import type { Theme, ThemeOptions } from "@mui/material/styles";
 import createCustomTheme from "./utils/createCustomTheme";
 
 const reducer = (currentTheme: Theme, themeAsset: ThemeOptions) => {
