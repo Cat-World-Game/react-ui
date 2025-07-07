@@ -1,6 +1,6 @@
 {
   "name": "@cw-game/react-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "license": "MIT",
   "files": [
@@ -16,6 +16,9 @@
       "types": "./dist/main.d.ts",
       "require": "./dist/main.umd.js",
       "import": "./dist/main.es.js"
+    },
+    "./neucha": {
+      "import": "./dist/main.css"
     }
   },
   "scripts": {
