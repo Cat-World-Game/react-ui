@@ -1,3 +1,5 @@
+"use client"
+
 import { createTheme, type ThemeOptions } from "@mui/material/styles";
 import MuiCssBaseline from "../components/MuiCssBaseline";
 import breakpoints from "../const/breakpoints";

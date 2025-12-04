@@ -1,10 +1,12 @@
+"use client"
+
 import { useContext } from "react";
 import { useTheme as useMaterialTheme } from "@mui/material/styles";
-import ThemeDispatchContext from "../ThemeDispatchContext";
+import getThemeDispatchContext from "../ThemeDispatchContext";
 
 const useTheme = () => {
   const theme = useMaterialTheme();
-  const changeTheme = useContext(ThemeDispatchContext);
+  const changeTheme = useContext(getThemeDispatchContext());
 
   return { theme, changeTheme };
 };

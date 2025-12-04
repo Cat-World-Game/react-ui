@@ -1,16 +1,27 @@
-import { type PropsWithChildren, useReducer } from "react";
+"use client"
 
-import { ThemeProvider as MaterialThemeProvider } from "@mui/material/styles";
+import { type PropsWithChildren, useReducer, useEffect } from "react";
 
-import ThemeDispatchContext from "./ThemeDispatchContext";
+import { ThemeProvider as MaterialThemeProvider, type ThemeOptions } from "@mui/material/styles";
+
+import getThemeDispatchContext from "./ThemeDispatchContext";
 import reducer from "./reducer";
 import createCustomTheme from "./utils/createCustomTheme";
-import getTheme from "./utils/getTheme";
-
-const initialReducerState = createCustomTheme(getTheme());
+import darkMain from "./assets/dark-main.json";
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const [theme, dispatch] = useReducer(reducer, initialReducerState);
+  const [theme, dispatch] = useReducer( reducer, createCustomTheme(darkMain as ThemeOptions));
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("cwg:theme");
+      if (saved) {
+        dispatch(JSON.parse(saved));
+      }
+    } catch { /* empty */ }
+  }, []);
+
+  const ThemeDispatchContext = getThemeDispatchContext();
 
   return (
     <ThemeDispatchContext.Provider value={dispatch}>
