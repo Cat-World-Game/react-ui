@@ -1,3 +1,7 @@
+/**
+ * It's better to optimize svg than using this util
+ * @deprecated 
+ */
 const stylesToColorSvg = (color: string) => {
   return {
     "&[fill]": {

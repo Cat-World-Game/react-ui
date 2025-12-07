@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import preserveDirectives from "rollup-preserve-directives";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     dts({
@@ -20,22 +20,15 @@ export default defineConfig({
       cssFileName: "main",
     },
     rollupOptions: {
+      plugins: [preserveDirectives()],
       external: [
         "react",
         "react-dom",
-        "@mui/material",
-        "@emotion/react",
-        "@emotion/styled",
+        /^@mui\/.*/,
+        /^@emotion\/.*/,
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
       ],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          "@mui/material": "MaterialUI",
-          "@emotion/react": "EmotionReact",
-          "@emotion/styled": "EmotionStyled",
-        },
-      },
     },
   },
 });
