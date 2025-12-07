@@ -1,11 +1,11 @@
 import type { DialogProps } from "@mui/material/Dialog";
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 
 export interface ModalProps extends PropsWithChildren {
   open: boolean;
   onClose?: () => void;
   hideCloseButton?: boolean;
   title?: string;
-  actions?: React.ReactNode | React.ReactNode[];
+  actions?: ReactNode | ReactNode[];
   env?: DialogProps["env"];
 }

@@ -3,14 +3,14 @@ import FormLabel from "@mui/material/FormLabel";
 import Typography from "@mui/material/Typography";
 import TextField, { type TextFieldProps } from "@mui/material/TextField";
 import { getVariantBySize } from "./utils";
-import React from "react";
+import { forwardRef, type ReactNode } from "react";
 
 type InputProps = TextFieldProps & {
-  startAdornment?: React.ReactNode;
-  endAdornment?: React.ReactNode;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
 };
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, startAdornment, endAdornment, ...restProps }, ref) => {
     return (
       <Box>
