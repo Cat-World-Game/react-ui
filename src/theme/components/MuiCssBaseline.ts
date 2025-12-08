@@ -1,6 +1,6 @@
 import type { ThemeOptions } from "@mui/material/styles";
 
-const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
+const isFirefox = typeof window === "undefined" ? false : navigator.userAgent.toLowerCase().includes("firefox");
 
 const MuiCssBaseline: ThemeOptions["components"] = {
   MuiCssBaseline: {
